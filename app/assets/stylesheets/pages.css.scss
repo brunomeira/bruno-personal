@@ -1,0 +1,63 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@mixin page-element-position($top, $left, $mainLeft, $marginTop) {
+  left: $left;
+  margin: {
+    left: $mainLeft;
+    top: $marginTop;
+  }
+  position: fixed;
+  top: $top;
+}
+
+body {
+  background: image-url("main_page.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.main-content {
+  position: relative;
+
+  .author-image {
+    border: 2px solid white;
+    border-radius: 60px;
+    opacity: 0.8;
+    width: 100%;
+
+    &:hover {
+      opacity: 1.0;
+    }
+  }
+
+  .lab-section-icon {
+    @include page-element-position(10%, 70%, -30px, -30px);
+  }
+
+  .main-icon-element {
+    background-color: white;
+    border-radius: 30px;
+    font-size: 50px;
+    text-align: center;
+    width: 60px;
+  }
+
+  .main-image {
+    @include page-element-position(50%, 50%, -4%, -8%);
+
+    min-width: 50px;
+    width: 8%;
+  }
+
+  .top-line {
+    @include page-element-position(50%, 50%, -4%, -4%);
+    height: 100px;
+    width: 10px;
+    background-color: white;
+  }
+
+}
